@@ -1,6 +1,10 @@
 #!/bin/bash
 until [ -f $PROJECT_FILE_PATH ]; do
-  (>&2 echo "waiting for source...") && ls  -la /source && sleep 2
+  (>&2 echo "waiting for source...") && sleep 2
+done
+
+until [ -f $PROJECT_VENDOR_PATH ]; do
+  (>&2 echo "waiting for vendor...") && sleep 2
 done
 
 cd $PROJECT_PATH
