@@ -12,7 +12,7 @@ bin/console doctrine:migrations:migrate -q
 bin/console cache:clear --env=prod
 bin/console cache:warmup --env=prod
 chmod -R 777 var/cache || true
-chmod -R 777 var/logs || true
+chmod -R 777 var/log || true
 yarn install || true
 yarn run encore production || true
 
@@ -27,7 +27,7 @@ while inotifywait -q -e modify $PROJECT_FILE_PATH >/dev/null; do
     bin/console cache:clear --env=prod
     bin/console cache:warmup --env=prod
     chmod -R 777 var/cache || true
-    chmod -R 777 var/logs || true
+    chmod -R 777 var/log || true
     yarn install || true
     yarn run encore production || true
 done
