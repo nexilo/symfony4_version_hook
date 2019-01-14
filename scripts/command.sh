@@ -13,6 +13,7 @@ bin/console cache:clear --env=prod
 bin/console cache:warmup --env=prod
 chmod -R 777 var/cache || true
 chmod -R 777 var/log || true
+chmod -R 777 vendor/openpayu/openpayu/lib/OpenPayU/Oauth/Cache/../../../Cache || true
 yarn install || true
 yarn run encore production || true
 
@@ -28,6 +29,7 @@ while inotifywait -q -e modify $PROJECT_FILE_PATH >/dev/null; do
     bin/console cache:warmup --env=prod
     chmod -R 777 var/cache || true
     chmod -R 777 var/log || true
+    chmod -R 777 vendor/openpayu/openpayu/lib/OpenPayU/Oauth/Cache/../../../Cache || true
     yarn install || true
     yarn run encore production || true
 done
