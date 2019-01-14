@@ -3,7 +3,7 @@ until [ -f $PROJECT_FILE_PATH ]; do
   (>&2 echo "waiting for source...") && sleep 2
 done
 
-until [ -f $PROJECT_VENDOR_PATH ]; do
+until [ -d $PROJECT_VENDOR_PATH ]; do
   (>&2 echo "waiting for vendor...") && sleep 2
 done
 
